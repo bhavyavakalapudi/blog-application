@@ -1,6 +1,9 @@
+const dotenv = require('dotenv');
+dotenv.config();
+
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb+srv://bhavyavakalapudi:T5oyRCjvNPvf6BeF@cluster0.qko4h.mongodb.net/blog?');
+mongoose.connect(process.env.MONGO_URL);
 
 const userSchema = mongoose.Schema({
     username: String,
